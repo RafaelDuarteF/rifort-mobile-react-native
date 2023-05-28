@@ -1,0 +1,12 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "types": ["styled-components"]
+  },
+  "include": [
+    "src", // diretório principal do código-fonte
+    "typings" // diretório onde está localizado o arquivo .d.ts
+  ]
+}
