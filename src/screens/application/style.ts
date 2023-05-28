@@ -64,3 +64,9 @@ export const ChegadasContainer = styled.View`
     align-items: center;
     justify-content: center;
 `;
+export const TextMensagemRetorno = styled.Text`
+    text-align: center;
+    color: ${({ theme }) => theme.thirdColor};
+    font-size: ${RFValue(19)}px;
+    font-family: 'Roboto-Bold';
+`;
