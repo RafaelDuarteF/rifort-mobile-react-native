@@ -16,10 +16,9 @@ export const ViewScreen = styled.View`
 `;
 export const PartApplicationContainer = styled.View<PartApplicationContainerProps>`
     width: 100%;
-    height: 33%;
+    height: ${windowHeight * 0.33}px;
     align-items: center;
     justify-content: center;
-    background-color: ${({ theme }) => theme.backgroundColor};
     ${({border}) => border && css`
         border-bottom-width: 1px;
         border-color: ${({ theme }) => theme.line500color};
@@ -29,13 +28,12 @@ export const ImageFundo = styled.Image`
     width: ${windowWidth}px;
     height: 100%;
     opacity: 0.4;
-    margin-top: ${RFValue(-25)}px;
 `;
 export const TextInitialApplication = styled.Text`
     position: absolute;
     color: ${({ theme }) => theme.thirdColor};
     font-family: 'Roboto-Light';
-    font-size: ${RFValue(16)}px;
+    font-size: ${RFValue(19)}px;
 `;
 export const ImageLogo = styled.Image`
     align-items: flex-start;
@@ -66,7 +64,8 @@ export const ChegadasContainer = styled.View`
 `;
 export const TextMensagemRetorno = styled.Text`
     text-align: center;
+    width: 90%;
     color: ${({ theme }) => theme.thirdColor};
     font-size: ${RFValue(19)}px;
-    font-family: 'Roboto-Bold';
+    font-family: 'Roboto-Light';
 `;

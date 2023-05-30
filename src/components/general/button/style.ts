@@ -15,7 +15,7 @@ export const ButtonP = styled.TouchableOpacity<ButtonProps>`
     margin-top: 20px;
 `;
 export const TextButtonP = styled.Text`
-    color: #fff;
+    color: ${({ theme }) => theme.backgroundColor};
     font-size: ${RFValue(18)}px;
-    font-family: 'Roboto-Bold';
+    font-family: 'Roboto-BlackItalic';
 `;

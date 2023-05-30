@@ -20,5 +20,6 @@ export const CorLotacao = styled.View<CorProps>`
 export const TextLotacao = styled.Text`
     color: ${({theme}) => theme.thirdColor};
     font-family: 'Roboto-Thin';
+    width: 100%;
     font-size: ${RFValue(15)}px;
 `;

@@ -10,20 +10,27 @@ import {
     InfosOnibusText,
 } from './style';
 
-export default function Chegadas() {
+interface ChegadasProps {
+    linha: string,
+    chegada: string,
+    lotacaoMax: number,
+    lotacaoAtual: number,
+}
+
+export default function Chegadas({linha, chegada, lotacaoMax, lotacaoAtual} : ChegadasProps) {
     return(
         <Chegada>
             <Linha>
                 <LinhaInfos>
                     <LinhaImage resizeMode='contain' source={require('../../../../assets/images/vetorOnibus.png')} />
-                    <LinhaText>Terminal Amaral Gurgel</LinhaText>
+                    <LinhaText>{linha}</LinhaText>
                 </LinhaInfos>
                 <LinhaColor />
             </Linha>
             <InfosOnibus>
-                <InfosOnibusText>Chegada: 12:14</InfosOnibusText>
-                <InfosOnibusText>Lotação Máxima: 45 passageiros</InfosOnibusText>
-                <InfosOnibusText>Lotação Atual: 30 passageiros</InfosOnibusText>
+                <InfosOnibusText>Chegada: {chegada}</InfosOnibusText>
+                <InfosOnibusText>Lotação Máxima: {lotacaoMax} passageiros</InfosOnibusText>
+                <InfosOnibusText>Lotação Atual: {lotacaoAtual} passageiros</InfosOnibusText>
             </InfosOnibus>
         </Chegada>
     );

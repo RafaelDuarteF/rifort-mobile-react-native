@@ -12,7 +12,7 @@ export const ViewScreen = styled.View`
 export const TextInitial = styled.Text`
     color: ${({ theme }) => theme.thirdColor};
     font-size: ${RFValue(16)}px;
-    font-family: 'Roboto-Thin';
+    font-family: 'Roboto-Light';
 `;
 export const ImageLogo = styled.Image`
     width: 70%;
