@@ -17,23 +17,23 @@ interface ChegadasProps {
     lotacaoAtual: number,
 }
 
-export default function Chegadas({linha, chegada, lotacaoMax, lotacaoAtual} : ChegadasProps) {
+export default function Chegadas({ linha, chegada, lotacaoMax, lotacaoAtual }: ChegadasProps) {
 
     const vermelhaLotacao = lotacaoMax * 0.8;
     const laranjaLotacao = lotacaoMax * 0.5;
     const corLotacao = setColorLotacao();
 
     function setColorLotacao() {
-        if(vermelhaLotacao < lotacaoAtual) {
+        if (vermelhaLotacao < lotacaoAtual) {
             return 'red';
         } else if (laranjaLotacao < lotacaoAtual) {
-             return 'orange';
+            return 'orange';
         } else {
             return 'green';
         }
     }
 
-    return(
+    return (
         <Chegada>
             <Linha>
                 <LinhaInfos>

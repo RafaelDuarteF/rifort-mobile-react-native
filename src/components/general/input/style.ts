@@ -6,7 +6,7 @@ interface InputProps {
 }
 
 export const Container = styled.View<InputProps>`
-    width: ${({width}) => width};
+    width: ${({ width }) => width};
     flex-direction: column;
     align-items: center;
     justify-content: center;

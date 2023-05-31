@@ -64,7 +64,7 @@ export const InfosOnibus = styled.View`
     justify-content: center;
 `;
 export const InfosOnibusText = styled.Text`
-    color: ${({theme}) => theme.thirdColor};
+    color: ${({ theme }) => theme.thirdColor};
     font-family: 'Roboto-Thin';
     font-size: ${RFValue(16)}px;
 `;

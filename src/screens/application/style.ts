@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 import { Dimensions } from 'react-native';
 
@@ -12,14 +12,14 @@ interface PartApplicationContainerProps {
 
 export const ViewScreen = styled.View`
     flex: 1;
-    background-color: ${({theme}) => theme.backgroundColor};
+    background-color: ${({ theme }) => theme.backgroundColor};
 `;
 export const PartApplicationContainer = styled.View<PartApplicationContainerProps>`
     width: 100%;
     height: ${windowHeight * 0.33}px;
     align-items: center;
     justify-content: center;
-    ${({border}) => border && css`
+    ${({ border }) => border && css`
         border-bottom-width: 1px;
         border-color: ${({ theme }) => theme.line500color};
     `}

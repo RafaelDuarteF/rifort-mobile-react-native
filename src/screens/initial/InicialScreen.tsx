@@ -10,7 +10,7 @@ export default function InicialScreen() {
     const navigation = useNavigation();
 
     function handleRedirectApplication() {
-        navigation.navigate('Application') ;
+        navigation.navigate('Application');
     }
 
     return (
@@ -18,7 +18,7 @@ export default function InicialScreen() {
             <Triangle type="top" />
             <ImageLogo resizeMode="contain" source={require('../../../assets/images/logo.png')} />
             <TextInitial>Bem Vindo!</TextInitial>
-            <Button onPress={handleRedirectApplication} title="Entrar" width="50%"/>
+            <Button onPress={handleRedirectApplication} title="Entrar" width="50%" />
             <Triangle type="bottom" />
         </ViewScreen>
     );

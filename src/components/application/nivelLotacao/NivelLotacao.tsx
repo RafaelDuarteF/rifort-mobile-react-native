@@ -9,10 +9,10 @@ interface NivelLotacaoProps {
     title: string
 }
 
-export default function NivelLotacao({cor, title} : NivelLotacaoProps) {
-    return(
+export default function NivelLotacao({ cor, title }: NivelLotacaoProps) {
+    return (
         <Container>
-            <CorLotacao cor={cor}/>
+            <CorLotacao cor={cor} />
             <TextLotacao>{title}</TextLotacao>
         </Container>
     );

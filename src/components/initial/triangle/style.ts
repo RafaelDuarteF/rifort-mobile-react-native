@@ -1,10 +1,9 @@
-import React from "react";
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 interface TypeProps {
   type: 'top' | 'bottom',
-  
+
 }
 
 export const TriangleContainer = styled.View<TypeProps>`
