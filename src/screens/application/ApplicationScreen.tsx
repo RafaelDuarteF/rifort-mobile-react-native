@@ -138,8 +138,7 @@ export default function ApplicationScreen() {
                     <Input value={linha} onChangeText={handleSetLinha} icon={false} width='90%' placeholder="Linha" />
                     <Input value={parada} onChangeText={handleSetParada} icon={true} onIconClick={handleExibirOnibus} width='90%' placeholder="Parada" />
                     <NivelLotacaoContainer>
-                        <NivelLotacao cor="red" title="Lotad
-                        a"/>
+                        <NivelLotacao cor="red" title="Lotada"/>
                         <NivelLotacao cor="orange" title="Intermediária" />
                         <NivelLotacao cor="green" title="Vazia" />
                     </NivelLotacaoContainer>

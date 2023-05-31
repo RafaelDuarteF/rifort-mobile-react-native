@@ -3,5 +3,5 @@ module.exports = {
       ios: {},
       android: {},
     },
-    assets: ['./assets/fonts/roboto'], // caminho para os diretórios de assets personalizados
+    assets: ['./assets/fonts'], // caminho para os diretórios de assets personalizados
 };
