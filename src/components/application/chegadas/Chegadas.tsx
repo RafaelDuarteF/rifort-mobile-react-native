@@ -18,6 +18,21 @@ interface ChegadasProps {
 }
 
 export default function Chegadas({linha, chegada, lotacaoMax, lotacaoAtual} : ChegadasProps) {
+
+    const vermelhaLotacao = lotacaoMax * 0.8;
+    const laranjaLotacao = lotacaoMax * 0.5;
+    const corLotacao = setColorLotacao();
+
+    function setColorLotacao() {
+        if(vermelhaLotacao < lotacaoAtual) {
+            return 'red';
+        } else if (laranjaLotacao < lotacaoAtual) {
+             return 'orange';
+        } else {
+            return 'green';
+        }
+    }
+
     return(
         <Chegada>
             <Linha>
@@ -25,7 +40,7 @@ export default function Chegadas({linha, chegada, lotacaoMax, lotacaoAtual} : Ch
                     <LinhaImage resizeMode='contain' source={require('../../../../assets/images/vetorOnibus.png')} />
                     <LinhaText>{linha}</LinhaText>
                 </LinhaInfos>
-                <LinhaColor />
+                <LinhaColor cor={corLotacao} />
             </Linha>
             <InfosOnibus>
                 <InfosOnibusText>Chegada: {chegada}</InfosOnibusText>

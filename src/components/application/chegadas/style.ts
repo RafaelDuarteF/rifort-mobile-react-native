@@ -8,6 +8,9 @@ const windowWidth = Dimensions.get('window').width;
 // Calcula a altura correspondente a 33% da tela em pixels
 const height33Percent = windowHeight * 0.33;
 
+interface LinhaColorProps {
+  cor: string
+}
 
 export const Chegada = styled.View`
   width: ${windowWidth}px;
@@ -42,10 +45,10 @@ export const LinhaText = styled.Text`
   font-size: ${RFValue(16)}px;
 `;
 
-export const LinhaColor = styled.View`
+export const LinhaColor = styled.View<LinhaColorProps>`
   width: ${windowWidth * 0.15}px;
   height: 10px;
-  background-color: red;
+  background-color: ${({ cor }) => cor ?? 'gray'};
   border-radius: 4px;
 `;
 
