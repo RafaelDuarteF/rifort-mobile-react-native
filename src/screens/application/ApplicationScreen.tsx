@@ -3,6 +3,7 @@ import { ScrollView, ActivityIndicator, Dimensions, Keyboard } from 'react-nativ
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { useTheme } from 'styled-components/native';
 import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 import {
@@ -14,7 +15,8 @@ import {
     NivelLotacaoContainer,
     ScrollContainer,
     ChegadasContainer,
-    TextMensagemRetorno
+    TextMensagemRetorno,
+    ImageTouchable
 } from "./style";
 
 import NivelLotacao from '../../components/application/nivelLotacao/NivelLotacao';
@@ -25,6 +27,8 @@ const windowHeight = Dimensions.get('window').height;
 
 export default function ApplicationScreen() {
 
+    const navigation = useNavigation();
+
     const theme = useTheme();
     const [loading, setLoading] = useState(false);
     const [exibirChegadas, setExibirChegadas] = useState(false);
@@ -33,6 +37,10 @@ export default function ApplicationScreen() {
     const [chegadas, setChegadas] = useState({ chegada1: '', chegada2: '' });
     const [linha, setLinha] = useState('')
     const [parada, setParada] = useState('')
+
+    function handleRedirectInitial() {
+        navigation.navigate('Initial');
+    }
 
     function handleSetLinhaRetornada(value: string) {
         setLinhaRetornada(value);
@@ -131,7 +139,9 @@ export default function ApplicationScreen() {
             <ViewScreen>
                 <PartApplicationContainer>
                     <ImageFundo resizeMode="cover" source={require('../../../assets/images/onibus.jpg')} />
-                    <ImageLogo resizeMode="contain" source={require('../../../assets/images/logo.png')} />
+                    <ImageTouchable onPress={handleRedirectInitial}>
+                        <ImageLogo resizeMode="contain" source={require('../../../assets/images/logo.png')} />
+                    </ImageTouchable>
                     <TextInitialApplication>Informe a linha e a parada</TextInitialApplication>
                 </PartApplicationContainer>
                 <PartApplicationContainer border={true} style={{ paddingTop: RFValue(10) }}>

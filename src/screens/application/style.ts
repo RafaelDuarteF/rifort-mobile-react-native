@@ -35,13 +35,17 @@ export const TextInitialApplication = styled.Text`
     font-family: 'Roboto-Light';
     font-size: ${RFValue(19)}px;
 `;
-export const ImageLogo = styled.Image`
+export const ImageTouchable = styled.TouchableOpacity`
     align-items: flex-start;
     justify-content: flex-start;
     position: absolute;
     top: 0;
     left: 0;
     width: 40%;
+    height: ${RFValue(40)}px;
+`;
+export const ImageLogo = styled.Image`
+    width: 100%;
     height: ${RFValue(40)}px;
 `;
 export const NivelLotacaoContainer = styled.View`
