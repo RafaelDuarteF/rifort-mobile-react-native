@@ -3,6 +3,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 
 interface TypeProps {
   type: 'top' | 'bottom',
+  color: string
 
 }
 
@@ -10,7 +11,7 @@ export const TriangleContainer = styled.View<TypeProps>`
     width: ${RFValue(400)}px;
     height: ${RFValue(400)}px;
     transform: rotate(50deg);
-    border: 1px solid ${({ theme }) => theme.primaryColor};
+    border: 1px solid ${({ color }) => color};
     position: absolute;
     top: ${({ type }) => (type === 'top' ? RFValue(-260) + 'px' : 'auto')};
     bottom: ${({ type }) => (type === 'bottom' ? RFValue(-260) + 'px' : 'auto')};
@@ -20,7 +21,7 @@ export const TriangleContainer = styled.View<TypeProps>`
 export const TriangleF = styled.View<TypeProps>`
   width: ${RFValue(250)}px;
   height: ${RFValue(250)}px;
-  background-color: ${({ theme }) => theme.primaryColor};
+  background-color: ${({ color }) => color};
   transform: rotate(50deg);
   position: absolute;
   top: ${({ type }) => (type === 'top' ? RFValue(-160) + 'px' : 'auto')};
