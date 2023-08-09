@@ -3,7 +3,6 @@ import { ScrollView, ActivityIndicator, Dimensions, Keyboard } from 'react-nativ
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { useTheme } from 'styled-components/native';
 import axios from 'axios';
-import { useNavigation } from '@react-navigation/native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 import {
@@ -25,9 +24,7 @@ import Chegadas from '../../components/application/chegadas/Chegadas';
 
 const windowHeight = Dimensions.get('window').height;
 
-export default function ApplicationScreen() {
-
-    const navigation = useNavigation();
+export default function ApplicationScreen({ navigation } : any) {
 
     const theme = useTheme();
     const [loading, setLoading] = useState(false);
@@ -97,7 +94,7 @@ export default function ApplicationScreen() {
                     setLoading(false);
                     setExibirChegadas(true);
                     handleSetMensagemRetorno('Erro ao se comunicar.');
-                })
+            })
         }
     }
 

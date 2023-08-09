@@ -7,7 +7,7 @@ interface ButtonProps extends TouchableOpacityProps {
   width: string;
 }
 
-export default function Button({ title, width, ...rest }: ButtonProps) {
+export default function Button({ title, width, ...rest } : ButtonProps) {
   return (
     <ButtonP width={width} {...rest}>
       <TextButtonP>{title}</TextButtonP>

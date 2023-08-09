@@ -5,7 +5,7 @@ import AppNavigator from './src/AppNavigator';
 import theme from './src/theme';
 
 export default function App() {
-  return (
+  return (  
     <SafeAreaView style={{flex: 1}}>
       <ThemeProvider theme={theme}>
         <View style={{flex: 1}}>
