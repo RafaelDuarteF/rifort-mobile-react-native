@@ -34,6 +34,7 @@ export const TextInitialApplication = styled.Text`
     color: ${({ theme }) => theme.thirdColor};
     font-family: 'Roboto-Light';
     font-size: ${RFValue(19)}px;
+    text-align: center;
 `;
 export const ImageTouchable = styled.TouchableOpacity`
     align-items: flex-start;
@@ -72,4 +73,9 @@ export const TextMensagemRetorno = styled.Text`
     color: ${({ theme }) => theme.thirdColor};
     font-size: ${RFValue(19)}px;
     font-family: 'Roboto-Light';
+`;
+export const LinhaInput = styled.View`
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
 `;

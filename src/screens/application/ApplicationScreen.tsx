@@ -15,7 +15,8 @@ import {
     ScrollContainer,
     ChegadasContainer,
     TextMensagemRetorno,
-    ImageTouchable
+    ImageTouchable,
+    LinhaInput
 } from "./style";
 
 import NivelLotacao from '../../components/application/nivelLotacao/NivelLotacao';
@@ -34,6 +35,7 @@ export default function ApplicationScreen({ navigation } : any) {
     const [chegadas, setChegadas] = useState({ chegada1: '', chegada2: '' });
     const [linha, setLinha] = useState('')
     const [parada, setParada] = useState('')
+    const [numLinha, setNumLinha] = useState('');
 
     function handleRedirectInitial() {
         navigation.navigate('Initial');
@@ -53,6 +55,10 @@ export default function ApplicationScreen({ navigation } : any) {
 
     function handleSetLinha(value: string) {
         setLinha(value);
+    }
+
+    function handleSetNumLinha(value: string) {
+        setNumLinha(value);
     }
 
     function handleSetChegadas(value: string, value2: string) {
@@ -75,6 +81,7 @@ export default function ApplicationScreen({ navigation } : any) {
     function handleVerificarChegadas() {
         const linhaIn = linha;
         const paradaIn = parada;
+        const numLinhaIn = numLinha;
 
         if (linhaIn === '' || paradaIn === '') {
             setLoading(false);
@@ -84,8 +91,8 @@ export default function ApplicationScreen({ navigation } : any) {
             // Exibir o indicador de carregamento
 
             axios
-                .get('http://192.168.0.106:8000/api/aplicacao/verificarChegadas', {
-                    params: { linha: linhaIn, parada: paradaIn },
+                .get('http://192.168.0.107:8000/api/aplicacao/verificarChegadas', {
+                    params: { linha: linhaIn, parada: paradaIn, numLinha: numLinhaIn },
                 })
                 .then(response => {
                     exibir(response.data);
@@ -107,14 +114,14 @@ export default function ApplicationScreen({ navigation } : any) {
             handleSetMensagemRetorno('Linha ou parada informada são inválidas!');
         }
         else {
-            const linha = res?.['linha']?.['tp'] ?? false;
+            const linha = res?.['linha']?.['nome'] ?? false;
             if (!linha) {
                 setLoading(false);
                 handleSetMensagemRetorno('Linha informada inválida');
             } else {
                 const chegada1 = res?.chegada?.vs?.[0]?.t ?? false;
                 const chegada2 = res?.chegada?.vs?.[1]?.t ?? false;
-                const linhaOnibus = 'Linha - ' + res['linha']['lt'] + ' ' + linha;
+                const linhaOnibus = 'Linha - ' + res['linha']['num'] + ' ' + linha;
                 if (!chegada1) {
                     setLoading(false);
                     handleSetMensagemRetorno('Não há informações de chegada da linha na parada informada.');
@@ -139,10 +146,13 @@ export default function ApplicationScreen({ navigation } : any) {
                     <ImageTouchable onPress={handleRedirectInitial}>
                         <ImageLogo resizeMode="contain" source={require('../../../assets/images/logo.png')} />
                     </ImageTouchable>
-                    <TextInitialApplication>Informe a linha e a parada</TextInitialApplication>
+                    <TextInitialApplication>Informe o número e sentido da linha e a parada.</TextInitialApplication>
                 </PartApplicationContainer>
                 <PartApplicationContainer border={true} style={{ paddingTop: RFValue(10) }}>
-                    <Input value={linha} onChangeText={handleSetLinha} icon={false} width='90%' placeholder="Linha" />
+                    <LinhaInput>
+                        <Input value={numLinha} onChangeText={handleSetNumLinha} icon={false} width='48%' placeholder="Número" />
+                        <Input value={linha} onChangeText={handleSetLinha} icon={false} width='48%' placeholder="Sentido" />
+                    </LinhaInput>
                     <Input value={parada} onChangeText={handleSetParada} icon={true} onIconClick={handleExibirOnibus} width='90%' placeholder="Parada" />
                     <NivelLotacaoContainer>
                         <NivelLotacao cor="red" title="Lotada" />
