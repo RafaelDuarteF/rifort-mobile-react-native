@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
-import Icon from 'react-native-vector-icons/Ionicons';
 
 interface InputProps {
     width: string;
+    height: string;
 }
 
 export const Container = styled.View<InputProps>`
@@ -12,17 +12,10 @@ export const Container = styled.View<InputProps>`
     justify-content: center;
 `;
 
-export const InputP = styled.TextInput`
+export const InputC = styled.TextInput`
     width: 100%;
-    padding: 10px 20px;
+    height: 100%;
     border-radius: 15px;
-    background-color: ${({ theme }) => theme.thirdColor};
-    margin: 10px;
+    background-color: ${({ theme }) => theme.secondaryColor};
     color: black;
-`;
-
-export const SetaIcon = styled(Icon)`
-    position: absolute;
-    right: 0;
-    margin-right: 5px;
 `;

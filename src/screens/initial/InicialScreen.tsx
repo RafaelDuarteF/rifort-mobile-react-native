@@ -11,8 +11,13 @@ export default function InicialScreen({ navigation } : any) {
     function handleRedirectApplication() {
         navigation.navigate('Application');
     }
+
     function handleRedirectProjeto() {
         navigation.navigate('Projeto');
+    }
+
+    function handleRedirectContato() {
+        navigation.navigate('Contato');
     }
 
     return (
@@ -22,6 +27,7 @@ export default function InicialScreen({ navigation } : any) {
             <TextInitial>Bem Vindo!</TextInitial>
             <Button onPress={handleRedirectApplication} title="Entrar" width="50%" />
             <Button onPress={handleRedirectProjeto} title="Sobre a RIFORT" width="60%" style={{backgroundColor: 'gainsboro', height: RFValue(40)}} />
+            <Button onPress={handleRedirectContato} title="Contate-nos" width="60%" style={{backgroundColor: 'gainsboro', height: RFValue(40)}} />
             <Triangle type="bottom" />
         </ViewScreen>
     );

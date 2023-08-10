@@ -86,7 +86,7 @@ export default function ApplicationScreen({ navigation } : any) {
         if (linhaIn === '' || paradaIn === '') {
             setLoading(false);
             setExibirChegadas(true);
-            handleSetMensagemRetorno('Por favor, informe a linha e a parada.');
+            handleSetMensagemRetorno('Por favor, informe o número e sentido da linha e a parada.');
         } else {
             // Exibir o indicador de carregamento
 
@@ -108,7 +108,7 @@ export default function ApplicationScreen({ navigation } : any) {
     function exibir(res: any) {
         if (res === 'empty') {
             setLoading(false);
-            handleSetMensagemRetorno('Por favor, informe a linha e a parada.');
+            handleSetMensagemRetorno('Por favor, informe o número e sentido da linha e a parada.');
         } else if (res === 'invalid') {
             setLoading(false);
             handleSetMensagemRetorno('Linha ou parada informada são inválidas!');
