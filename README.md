@@ -17,7 +17,7 @@ O sistema deverá:
 * O sistema deverá obter as informações necessárias gerais sobre os ônibus de São Paulo utilizando a API OlhoVivo, da SPTrans;
 * O sistema deverá filtrar e automaticamente excluir solicitações de contato de usuários identificados como maliciosas ou indevidas;
 * O sistema usará o MySql com o MySql Workbench para gerenciar o Banco de Dados;
-* O sistema deverá ser compatível com IOS e Android;
+* A aplicação deverá ser compatível com IOS e Android;
 * O banco deverá conter as tabelas de users, respectivo aos funcionários com acesso especial, e a de contatos, relacionado a solicitações de contatos dos usuários comuns.
 * O sistema será desenvolvido utilizando:
     1. Linguagens - Javascript, Typescript, PHP, SQL.
