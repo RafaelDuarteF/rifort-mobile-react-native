@@ -17,7 +17,7 @@ O sistema deverá:
 * A senha do usuário deverá ser armazenada no banco de dados criptografada;
 * O sistema web deverá solicitar ao usuário acesso a sua localização para exibir no mapa, visando UX;
 * O sistema deverá obter as informações necessárias gerais sobre os ônibus de São Paulo utilizando a API OlhoVivo, da SPTrans;
-* O sistema deverá filtrar e automaticamente excluir solicitações de contato de usuários identificados como maliciosas ou indevidas.
+* O sistema deverá filtrar e automaticamente excluir solicitações de contato de usuários identificados como maliciosas ou indevidas;
 * O sistema usará o MySql com o MySql Workbench para gerenciar o Banco de Dados
 * O sistema será desenvolvido utilizando:
     1. Linguagens - Javascript, Typescript, PHP, SQL.
