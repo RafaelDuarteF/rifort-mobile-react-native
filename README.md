@@ -16,7 +16,8 @@ O sistema deverá:
 * As requisições para contato deverão possuir limite máximo de 5 envios por sessão;
 * O sistema deverá obter as informações necessárias gerais sobre os ônibus de São Paulo utilizando a API OlhoVivo, da SPTrans;
 * O sistema deverá filtrar e automaticamente excluir solicitações de contato de usuários identificados como maliciosas ou indevidas;
-* O sistema usará o MySql com o MySql Workbench para gerenciar o Banco de Dados
+* O sistema usará o MySql com o MySql Workbench para gerenciar o Banco de Dados;
+* O sistema deverá ser compatível com IOS e Android.
 * O sistema será desenvolvido utilizando:
     1. Linguagens - Javascript, Typescript, PHP, SQL.
     2. Compiladores & Servers - Nodejs, Artisan
