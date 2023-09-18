@@ -16,7 +16,7 @@ export default function ProjetoScreen({ navigation } : any) {
         navigation.navigate('Initial');
     }
     function handleRedirectSite() {
-        const url = 'https://127.0.0.1'; 
+        const url = 'http://192.168.0.109:8000'; 
         Linking.openURL(url);
     }
 

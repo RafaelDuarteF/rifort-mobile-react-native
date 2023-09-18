@@ -22,12 +22,13 @@ export const TextContato = styled.Text`
     text-align: center;
     font-family: 'Roboto-Light';
     font-size: ${RFValue(16)}px;
+    color: ${({ theme }) => theme.thirdColor};
 `;
 export const ViewFormContato = styled.View`
     width: 100%;
     height: 80%;
-    justify-content: center;
     align-items: center;
+    margin-top: ${RFValue(20)}px;
 `;
 export const TitleCampo = styled.Text`
     font-family: 'Roboto-Light';
@@ -37,7 +38,7 @@ export const TitleCampo = styled.Text`
 `;
 export const ButtonEnviar = styled.TouchableOpacity`
     width: 43%;
-    background-color: ${({theme}) => theme.primaryColor};
+    background-color: ${({theme}) => theme.thirdColor};
     height: 100%;
     align-items: center;
     justify-content: center;

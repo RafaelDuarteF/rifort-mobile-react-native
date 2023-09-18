@@ -91,7 +91,7 @@ export default function ApplicationScreen({ navigation } : any) {
             // Exibir o indicador de carregamento
 
             axios
-                .get('http://192.168.0.107:8000/api/aplicacao/verificarChegadas', {
+                .get('http://192.168.0.109:8000/api/aplicacao/verificarChegadas', {
                     params: { linha: linhaIn, parada: paradaIn, numLinha: numLinhaIn },
                 })
                 .then(response => {
